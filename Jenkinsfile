@@ -4,9 +4,9 @@ pipeline {
         stage('clone the repo and removing the existing one')
         {
           steps {
-              bat "cd d:\dev\packtpub\develop-and-deploy-modern-web-applications-with-docker"
-              bat "IF exist jenkins-pipeline (rmdir /s /q jenkins-pipeline)"
-              bat "git clone https://github.com/shayim/Develop-and-Deploy-Modern-Web-Applications-with-Docker-Video-.git jenkins-pipeline"
+             bat label: '', script: '''cd d:\\dev\\packtpub\\develop-and-deploy-modern-web-applications-with-docker
+IF exist jenkins-pipeline (rmdir /s /q jenkins-pipeline)
+git clone https://github.com/shayim/Develop-and-Deploy-Modern-Web-Applications-with-Docker-Video-.git jenkins-pipeline'''
                }
          }
          
